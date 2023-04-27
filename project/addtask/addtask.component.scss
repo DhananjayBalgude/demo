@@ -1,0 +1,18 @@
+.example-full-width {
+    width: 100%;
+  }
+  .selet{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .example-tab-icon {
+    margin-right: 8px;
+  }
+  .slidercard{
+    background-color: #f4f7fb;
+  }
+  mat-slider {
+    width: 300px;
+  }

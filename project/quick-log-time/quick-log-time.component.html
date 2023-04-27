@@ -1,0 +1,74 @@
+<h1 mat-dialog-title>
+Log time
+<button
+mat-icon-button
+style="float: right; margin: 5px 5px"
+mat-dialog-close
+>
+<mat-icon>close</mat-icon>
+</button>
+</h1>
+<mat-dialog-content>
+
+  <mat-form-field appearance="outline" class="full">
+    <mat-label>projects</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let item of dataproject" >
+    {{item.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="full">
+    <mat-label>Please Choose a Task</mat-label>
+    <mat-select >
+      <mat-option *ngFor="let item of tasklistdata" >
+        {{item.name}}
+          </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-checkbox class="example-margin" class="full">Check me!</mat-checkbox>
+  <div class="flex">
+  <mat-form-field appearance="outline" class="full1">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full1">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
+
+  <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+  <mat-form-field appearance="outline"class="full" >
+    <mat-label>Input</mat-label>
+    <input matInput rows="3">
+  </mat-form-field>
+  <div class="flex">
+    <button mat-raised-button mat-dialog-close>Close</button>
+<div>
+  <button
+  mat-button
+      color="primary"
+    >
+     Save and add another
+    </button>
+    <button
+    mat-button
+    mat-raised-button
+    color="primary"
+
+
+  >
+ Log Time
+  </button>
+</div>
+
+  </div>
+</mat-dialog-content>

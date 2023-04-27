@@ -1,0 +1,179 @@
+<h2 mat-dialog-title>
+  Add project
+  <button mat-icon-button style="float: right; margin: 5px" mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</h2>
+<mat-dialog-content>
+  <mat-grid-list cols="1" rowHeight="150px">
+    <mat-grid-tile>
+      <img
+        mat-card-image
+        src="https://cdn.vectorstock.com/i/1000x1000/52/56/teamwork-development-website-vector-27125256.webp"
+        class="img"
+      />
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <h1 class="createproject">Create Project</h1>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-stepper labelPosition="bottom" linear #stepper>
+    <mat-step [editable]="isEditable">
+      <form>
+        <ng-template matStepLabel>project Optoins </ng-template>
+        <div>
+          <mat-grid-list cols="1" rowHeight="150px">
+            <mat-grid-tile>
+              <img
+                mat-card-image
+                src="https://thumbs.dreamstime.com/b/settings-tool-icon-toolkit-repair-symbol-mechanic-maintenance-service-kit-preferences-cross-pictogram-vector-eps-181150512.jpg"
+                alt="Photo of a Shiba Inu"
+                class="imgg"
+              />
+            </mat-grid-tile>
+          </mat-grid-list>
+          <button mat-raised-button matDialogClose class="backbtn">
+            Colse
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            class="nextbtn"
+            matStepperNext
+            sty
+          >
+            Next step
+          </button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Details</ng-template>
+        <div class="detail">
+          <mat-form-field
+            hintLabel="Max 10 characters"
+            appearance="fill"
+            class="example-full-width"
+          >
+            <mat-label>Choose a name</mat-label>
+            <input
+              matInput
+              #input
+              maxlength="10"
+              placeholder="Ex. Nougat"
+              required
+              formControlName="secondCtrl"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Choose a Company</mat-label>
+            <mat-select required formControlName="secondCtrl">
+              <mat-option
+                *ngFor="let item of companytname"
+                [value]="item.name"
+                >{{ item.name }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Leave a comment</mat-label>
+          <textarea matInput required formControlName="secondCtrl"></textarea>
+        </mat-form-field>
+
+        <div>
+          <button mat-raised-button matStepperPrevious class="backbtn">
+            Back
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            matStepperNext
+            class="nextbtn"
+          >
+            Next Step
+          </button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Add People</ng-template>
+        <mat-card class="card">
+          <div mat-card-avatar class="example-header-image"></div>
+
+          <mat-card-content>
+            <mat-form-field class="example-full-width field">
+              <mat-label>Search</mat-label>
+              <input
+                matInput
+                required
+                formControlName="thirdCtrl"
+                placeholder="Search"
+              />
+
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Example home icon"
+                fontIcon="search"
+                matSuffix
+              ></mat-icon>
+            </mat-form-field>
+          </mat-card-content>
+          <mat-card-content>
+            <mat-tab-group>
+              <mat-tab label="People"> People </mat-tab>
+              <mat-tab label="Teams">Teams </mat-tab>
+            </mat-tab-group>
+          </mat-card-content>
+        </mat-card>
+        <br />
+        <div>
+          <button mat-raised-button matStepperPrevious class="backbtn">
+            Back
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            matStepperNext
+            class="nextbtn"
+          >
+            Next Step
+          </button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="forthFormGroup">
+      <form [formGroup]="forthFormGroup">
+        <ng-template matStepLabel>Advanced Option</ng-template>
+
+        <mat-card>
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Add Project Category</mat-label>
+            <mat-select required formControlName="forthCtr1">
+              <mat-option value="option">Toshal Infotech</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-card>
+        <br />
+        <div>
+          <button mat-raised-button matStepperPrevious class="backbtn">
+            Back
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            matDialogClose=""
+            class="nextbtn"
+          >
+            Add Project
+          </button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-stepper>
+</mat-dialog-content>

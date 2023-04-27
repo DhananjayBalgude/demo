@@ -1,0 +1,182 @@
+<div class="content">
+  <mat-card class="card1">
+    <div>
+      <mat-card-title class="title">
+        <mat-icon class="icon">list</mat-icon> TaskList
+        <button
+          class="add_tasklist_btn"
+          mat-button
+          color="primary"
+          (click)="addtasklist()"
+        >
+          <mat-icon>add</mat-icon>Add
+        </button>
+      </mat-card-title>
+    </div>
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngFor="let item of tasklistdata">
+        <div class="listitem">
+          <div>
+            {{ item.name }}
+            <span class="count">0</span>
+          </div>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+  <mat-card class="card2">
+    <div class="content">
+      <mat-card-title>Task</mat-card-title>
+
+      <div class="flex">
+        <input
+          type="search"
+          class="inputfield"
+          placeholder="Assignee or task name"
+        />
+
+        <mat-button-toggle-group
+          name="fontStyle"
+          aria-label="Font Style"
+          class="btn_group"
+        >
+          <mat-button-toggle class="btn_group"
+            ><mat-icon> person_pin</mat-icon></mat-button-toggle
+          >
+          <mat-button-toggle class="btn_group"
+            ><mat-icon>group</mat-icon></mat-button-toggle
+          >
+        </mat-button-toggle-group>
+
+        <button mat-raised-button color="primary" (click)="addtasklist()">
+          <mat-icon>add</mat-icon> Add Task List
+        </button>
+
+        <button
+          mat-icon-button
+          aria-label="Example icon button with a vertical three dot icon"
+        >
+          <mat-icon>filter_list</mat-icon>
+        </button>
+
+        <button
+          mat-icon-button
+          aria-label="Example icon button with a vertical three dot icon"
+        >
+          <mat-icon>more_horiz</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div>
+      <!-- <mat-accordion *ngFor="let item of tasklistdata" opened>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ item.name }} <button mat-icon-button (click)="addtask()"> <mat-icon>add</mat-icon> </button>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item *ngFor="let task of taskdata">
+              <h3 matListItemTitle>
+                <a class="task_name" routerLink="/taskdetail"
+                  >{{ task.name }}
+                </a>
+              </h3>
+              <p matListItemLine>
+                <span></span>
+                <span class="demo-2"> </span>
+              </p>
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <div>
+            <mat-label>Name</mat-label>
+            <mat-form-field appearance="outline" class="example-full-width">
+              <input
+                matInput
+                type="text"
+                placeholder="My Upcoming Events"
+              /> </mat-form-field
+            ><br />
+            <mat-label>Event Attendees</mat-label>
+            <mat-form-field appearance="fill" class="example-full-width">
+              <mat-label>Me</mat-label>
+              <mat-select>
+                <mat-option value="one">Me</mat-option>
+                <mat-option value="two">You</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-checkbox class="example-margin"
+              >Only show events I am attending</mat-checkbox
+            >
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion> -->
+      <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+
+          <button mat-icon-button disabled></button>
+          {{node.name}}
+        </mat-tree-node>
+
+        <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+          <button mat-icon-button matTreeNodeToggle
+                  [attr.aria-label]="'Toggle ' + node.name">
+            <mat-icon class="mat-icon-rtl-mirror">
+              {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+            </mat-icon>
+          </button>
+          {{node.name}}     <mat-icon (click)="addtask()">add</mat-icon>
+        </mat-tree-node>
+      </mat-tree>
+
+ <!-- <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
+          <button mat-icon-button disabled></button>
+
+        </mat-tree-node>
+
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+          <button mat-icon-button disabled></button>
+          <mat-form-field appearance="fill">
+            <mat-label>New item...</mat-label>
+            <input matInput #itemValue placeholder="Ex. Lettuce">
+          </mat-form-field>
+
+        </mat-tree-node>
+
+        <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+          <button mat-icon-button matTreeNodeToggle
+                  [attr.aria-label]="'Toggle ' + node.item">
+            <mat-icon class="mat-icon-rtl-mirror">
+              {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+            </mat-icon>
+          </button>
+
+          <button mat-icon-button ><mat-icon>add</mat-icon></button>
+        </mat-tree-node>
+      </mat-tree> -->
+
+    </div>
+  </mat-card>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

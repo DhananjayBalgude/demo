@@ -1,0 +1,117 @@
+.icon {
+  font-size: 20px;
+  height: 20px;
+  width: 30px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 200px;
+}
+.task_section {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+
+.inputfield {
+  height: 35px;
+  width: 300px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.task_section {
+  display: i;
+}
+.main {
+  padding: 1% 1% 0 1%;
+}
+
+.content {
+  display: flex;
+  grid-gap: 1px 1px;
+  justify-content: space-between;
+}
+
+.card1 {
+  width: 20%;
+  height: 100vh;
+}
+.card2 {
+  width: 80%;
+  height: 100vh;
+}
+
+.flex {
+  display: flex;
+  gap: 10px;
+}
+.card1 ul li {
+  text-decoration: none;
+  list-style: none;
+  padding: 10px;
+}
+.count {
+  float: right;
+}
+.add_tasklist_btn {
+  float: right;
+}
+
+example-tree-invisible {
+  display: none;
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+.example-tree .mat-nested-tree-node div[role="group"] {
+  padding-left: 40px;
+}
+
+.example-tree div[role="group"] > .mat-tree-node {
+  padding-left: 40px;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+mat-card-title {
+  cursor: pointer;
+}
+.listitem {
+  cursor: pointer;
+  justify-content: space-between;
+}
+.listitem :hover {
+  background: rgb(242, 244, 252);
+}
+.btn_group {
+  border-radius: 15px;
+}
+
+.task_name {
+  color: gray;
+}
+.example-tree-progress-bar {
+  margin-left: 30px;
+}
+
+.example-tree-invisible {
+  display: none;
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+

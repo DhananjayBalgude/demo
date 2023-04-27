@@ -1,0 +1,34 @@
+.container {
+  padding: 0 1% 0 1%;
+}
+.img {
+  width: 19%;
+  margin-top: 0%;
+}
+.imgg {
+  width: 18%;
+  margin-top: 0%;
+}
+.detail {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+.example-full-width {
+  width: 100%;
+}
+.backbtn {
+  float: left;
+}
+.nextbtn {
+  float: right;
+}
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
+.createproject {
+  font-weight: 800;
+}
+

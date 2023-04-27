@@ -1,0 +1,138 @@
+<div class="card3">
+  <mat-card class="card1">
+
+    <mat-list>
+
+      <mat-list-item >
+
+        <div matListItemTitle>Task List</div>
+        <div matListItemLine><a routerLink="/tasklist">{{dataTaskdetail.taskLists[0].name }}</a></div>
+      </mat-list-item>
+
+      <mat-list-item >
+
+        <div matListItemTitle>Assigned To</div>
+        <div matListItemLine>Unassigned</div>
+      </mat-list-item>
+      <mat-list-item >
+
+        <div matListItemTitle>Created By</div>
+        <div matListItemLine> {{dataTaskdetail.task.createdBy.firstName +" " + dataTaskdetail.task.createdBy.lastName}}</div>
+        <div matListItemLine>{{ dataTaskdetail.task.dateCreated }}</div>
+      </mat-list-item>
+      <mat-list-item >
+
+        <div matListItemTitle>Updated By</div>
+        <div matListItemLine>{{
+          dataTaskdetail.task.updatedBy.firstName +
+            " " +
+            dataTaskdetail.task.updatedBy.lastName}}</div>
+        <div matListItemLine>{{ dataTaskdetail.task.dateChanged }}</div>
+      </mat-list-item>
+      <mat-list-item >
+
+        <div matListItemTitle>Task Id</div>
+        <div matListItemLine>#{{ dataTaskdetail.task.id }}</div>
+      </mat-list-item>
+      </mat-list>
+  </mat-card>
+  <mat-card class="card2">
+      <div class="space">
+        <div class="card3">
+          <mat-card-title>Task Detail</mat-card-title>
+          <div class="flex">
+
+            <button mat-button extended>
+              <mat-icon>remove_red_eye</mat-icon>
+              Follow
+            </button>
+            <button mat-button extended (click)="opentimelogDialog()">
+              <mat-icon>schedule</mat-icon>
+              Log Time
+            </button>
+            <button mat-button extended>
+              <mat-icon>play_arrow</mat-icon>
+              Start Timer
+            </button>
+            <button
+              mat-button
+              extended
+              (click)="opentaskdetailDialog()"
+              color="primary"
+            >
+              <mat-icon>edit</mat-icon>
+              Edit task
+            </button>
+            <button
+              mat-icon-button
+              aria-label="Example icon button with a vertical three dot icon"
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+          </div>
+        </div>
+
+        <mat-divider></mat-divider>
+        <h2>Files</h2>
+
+        <div class="flex" *ngFor="let item of dataTaskdetail.task.attachments">
+          <img
+            matListItemMeta
+            src="{{ item.thumbnail }}"
+            class="img"
+          />
+ <mat-list>
+
+
+          <mat-list-item>
+            <div matListItemTitle>
+              {{ item.name }}
+            </div>
+            <div matListItemLine>
+              by {{dataTaskdetail.task.createdBy.firstName +" " + dataTaskdetail.task.createdBy.lastName}}
+            </div>
+          </mat-list-item>
+        </mat-list>
+        </div>
+        <div class="iconbtn">
+          <button mat-icon-button>
+            <mat-icon>search</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>cloud_download</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>backup</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>expand_more</mat-icon>
+          </button>
+        </div>
+
+        <a href="">Manage Task Attachments</a>
+        <br />
+        <br />
+        <mat-divider></mat-divider>
+        <h2>Time Logs</h2>
+        <p>
+          No time entries have been logged against this task -
+          <a class="link" (click)="opentimelogDialog()"
+            >Log time on this task</a
+          >
+        </p>
+        <mat-divider></mat-divider>
+        <h2>Comments</h2>
+        <div class="card3">
+          <div mat-card-avatar class="example-header-image"></div>
+          <textarea matInput rows="2" class="text"></textarea>
+        </div>
+
+        <mat-divider></mat-divider>
+
+      </div>
+
+  </mat-card>
+</div>

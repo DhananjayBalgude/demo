@@ -1,0 +1,39 @@
+.example-full-width {
+  width: 100%;
+}
+.selet{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.slidercard{
+  background-color: #f4f7fb;
+}
+.example-header-image {
+  background-size: cover;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+.user_icon{
+  display: flex;
+  gap: 10px;
+  text-align: center;
+}
+.flex
+{
+  display: flex;
+}
+.img{
+  height: 70px;
+}
+.iconbtn
+{
+  display: flex;
+  margin-left: 70px;
+}
+.select{
+  width: 350px
+}
